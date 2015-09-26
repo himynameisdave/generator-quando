@@ -1,4 +1,4 @@
-## generator-quando ![travis](https://api.travis-ci.org/himynameisdave/generator-quando.svg)
+## generator-quando [![travis](https://api.travis-ci.org/himynameisdave/generator-quando.svg)](https://travis-ci.org/himynameisdave/generator-quando)
 
 [Dave Lunny's](http://himynameisdave.com) personal generator.
 
