@@ -13,6 +13,9 @@
   "scripts": {
     "test": "mocha"
   },
+  "engines" : {
+    "node" : ">=4.1.0"
+  },
   "files": [
     "generators"
   ],
