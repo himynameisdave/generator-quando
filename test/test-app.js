@@ -25,6 +25,12 @@ describe('quando:app', function () {
     ]);
   });
 
+  it('creates a readme', function () {
+    assert.file([
+      'readme.md'
+    ]);
+  });
+
   it('creates a package.json', function () {
     assert.file([
       'package.json'

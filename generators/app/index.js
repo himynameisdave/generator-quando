@@ -32,6 +32,10 @@ module.exports = yeoman.generators.Base.extend({
         this.destinationPath('Procfile')
       );
       this.fs.copy(
+        this.templatePath('_readme.md'),
+        this.destinationPath('readme.md')
+      );
+      this.fs.copy(
         this.templatePath('_package.json'),
         this.destinationPath('package.json')
       );
