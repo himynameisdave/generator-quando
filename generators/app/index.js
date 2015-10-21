@@ -56,8 +56,16 @@ module.exports = yeoman.generators.Base.extend({
         this.destinationPath('dist/index.html')
       );
       this.fs.copy(
+        this.templatePath('_index.html'),
+        this.destinationPath('src/index_template.html')
+      );
+      this.fs.copy(
         this.templatePath('_index.js'),
         this.destinationPath('src/js/index.js')
+      );
+      this.fs.copy(
+        this.templatePath('_HelloComponent.js'),
+        this.destinationPath('src/js/components/HelloComponent.js')
       );
       this.fs.copy(
         this.templatePath('_core.less'),

@@ -50,15 +50,22 @@ describe('quando:app', function () {
     ]);
   });
 
-  it('creates a dist/index.html', function () {
+  it('creates index.html files', function () {
     assert.file([
-      'dist/index.html'
+      'dist/index.html',
+      'src/index_template.html'
     ]);
   });
 
   it('creates a src/js/index.js', function () {
     assert.file([
       'src/js/index.js'
+    ]);
+  });
+
+  it('creates a src/js/components/HelloComponent.js', function () {
+    assert.file([
+      'src/js/components/HelloComponent.js'
     ]);
   });
 
