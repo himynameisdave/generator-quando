@@ -40,6 +40,10 @@ module.exports = yeoman.generators.Base.extend({
         this.destinationPath('webpack.config.js')
       );
       this.fs.copy(
+        this.templatePath('_webpack.common.config.js'),
+        this.destinationPath('webpack.common.config.js')
+      );
+      this.fs.copy(
         this.templatePath('_server.js'),
         this.destinationPath('server.js')
       );

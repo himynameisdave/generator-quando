@@ -31,9 +31,10 @@ describe('quando:app', function () {
     ]);
   });
 
-  it('creates a webpack.config.js', function () {
+  it('creates a webpack.config.js & a common config', function () {
     assert.file([
-      'webpack.config.js'
+      'webpack.config.js',
+      'webpack.common.config.js'
     ]);
   });
 
