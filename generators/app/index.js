@@ -32,12 +32,20 @@ module.exports = yeoman.generators.Base.extend({
         this.destinationPath('Procfile')
       );
       this.fs.copy(
+        this.templatePath('_readme.md'),
+        this.destinationPath('readme.md')
+      );
+      this.fs.copy(
         this.templatePath('_package.json'),
         this.destinationPath('package.json')
       );
       this.fs.copy(
         this.templatePath('_webpack.config.js'),
         this.destinationPath('webpack.config.js')
+      );
+      this.fs.copy(
+        this.templatePath('_webpack.common.config.js'),
+        this.destinationPath('webpack.common.config.js')
       );
       this.fs.copy(
         this.templatePath('_server.js'),
@@ -48,8 +56,16 @@ module.exports = yeoman.generators.Base.extend({
         this.destinationPath('dist/index.html')
       );
       this.fs.copy(
+        this.templatePath('_index.html'),
+        this.destinationPath('src/index_template.html')
+      );
+      this.fs.copy(
         this.templatePath('_index.js'),
         this.destinationPath('src/js/index.js')
+      );
+      this.fs.copy(
+        this.templatePath('_HelloComponent.js'),
+        this.destinationPath('src/js/components/HelloComponent.js')
       );
       this.fs.copy(
         this.templatePath('_core.less'),

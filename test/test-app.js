@@ -25,15 +25,22 @@ describe('quando:app', function () {
     ]);
   });
 
+  it('creates a readme', function () {
+    assert.file([
+      'readme.md'
+    ]);
+  });
+
   it('creates a package.json', function () {
     assert.file([
       'package.json'
     ]);
   });
 
-  it('creates a webpack.config.js', function () {
+  it('creates a webpack.config.js & a common config', function () {
     assert.file([
-      'webpack.config.js'
+      'webpack.config.js',
+      'webpack.common.config.js'
     ]);
   });
 
@@ -43,15 +50,22 @@ describe('quando:app', function () {
     ]);
   });
 
-  it('creates a dist/index.html', function () {
+  it('creates index.html files', function () {
     assert.file([
-      'dist/index.html'
+      'dist/index.html',
+      'src/index_template.html'
     ]);
   });
 
   it('creates a src/js/index.js', function () {
     assert.file([
       'src/js/index.js'
+    ]);
+  });
+
+  it('creates a src/js/components/HelloComponent.js', function () {
+    assert.file([
+      'src/js/components/HelloComponent.js'
     ]);
   });
 
