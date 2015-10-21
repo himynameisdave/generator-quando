@@ -7,3 +7,7 @@ Here's the lay of the land: it's pretty rough out here. Not a lot of awesome fea
 ### Dev Server
 
 Run `webpack-dev-server` and you'll have a nice little development server running at `localhost:8080`. It's hard as nails and will livereload your shit. Pretty hype.
+
+### Adding Images and shit
+
+If you want to add an image or something you have to (very) awkwardly `require()` it in. More to come...
