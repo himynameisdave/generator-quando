@@ -8,7 +8,7 @@ var css = require("!style!css!less!../css/exports/core.less");
 import React from "react";
 
 //  Require a component like so
-import Hello from "./components/main"
+import Hello from "./components/HelloComponent"
 
 //  Main app/starting point
 const App = React.createClass({
