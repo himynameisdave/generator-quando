@@ -1,20 +1,20 @@
 {
   "name": "generator-quando",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "Dave Lunny's personal generator for Webpack+React+Heroku projects.",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "himynameisdave/generator-quando",
   "author": {
     "name": "Dave Lunny",
-    "email": "",
+    "email": "d@velunny.com",
     "url": "https://github.com/himynameisdave"
   },
   "scripts": {
     "test": "mocha"
   },
-  "engines" : {
-    "node" : ">=4.1.0"
+  "engines": {
+    "node": ">=6.0.0"
   },
   "files": [
     "generators"
@@ -29,6 +29,10 @@
     "yeoman-generator": "^0.19.0"
   },
   "devDependencies": {
+    "babel-preset-es2015": "^6.9.0",
+    "eslint": "^2.12.0",
+    "eslint-config-airbnb-base": "^3.0.1",
+    "eslint-plugin-import": "^1.8.1",
     "mocha": "^2.3.3"
   }
 }
