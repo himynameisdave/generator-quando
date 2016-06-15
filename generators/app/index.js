@@ -1,79 +1,51 @@
 'use strict';
-var yeoman = require('yeoman-generator'),
-    mkdirp = require('mkdirp'),
-    banner = require('./banner.js');
+const yeoman = require('yeoman-generator');
+const mkdirp = require('mkdirp');
+const banner = require('./utils/banner');
+const generatePrompts = require('./prompts/');
 
+//  The directories for the app
+const projectDirectories = [
+  './public/',
+  './server/',
+  './src/',
+  './src/actions/',
+  './src/components/',
+  './src/css/',
+  './src/images/',
+  './src/reducers/'
+];
 
 module.exports = yeoman.generators.Base.extend({
-  prompting: function () {
-    // var done = this.async();
+  prompting() {
+    const done = this.async();
+    //  Get the dirs in the path to this directory
+    const dirs = this.destinationRoot().split('/');
+    //  guessedDefaultProjectName is the default project name based on the current directory name
+    const guessedDefaultProjectName = dirs[dirs.length - 1];
 
+    //  Start by showing the banner
     this.log(banner);
-
-    // var prompts = [{
-    //   type: 'confirm',
-    //   name: 'someOption',
-    //   message: 'Would you like to enable this option?',
-    //   default: true
-    // }];
-
-    // this.prompt(prompts, function (props) {
-    //   this.props = props;
-    //   // To access props later use this.props.someOption;
-
-    //   done();
-    // }.bind(this));
+    //  Now we prompt the user for what the name of their project is
+    this.prompt(generatePrompts({ defaultProjectName: guessedDefaultProjectName }), (props) => {
+      this.props = props;
+      done();
+    });
   },
-
   writing: {
-    app: function () {
-      this.fs.copy(
-        this.templatePath('_Procfile'),
-        this.destinationPath('Procfile')
-      );
-      this.fs.copy(
+    app() {
+      this.fs.copyTpl(
         this.templatePath('_readme.md'),
-        this.destinationPath('readme.md')
+        this.destinationPath('readme.md'),
+        this.props
       );
-      this.fs.copy(
+      this.fs.copyTpl(
         this.templatePath('_package.json'),
-        this.destinationPath('package.json')
-      );
-      this.fs.copy(
-        this.templatePath('_webpack.config.js'),
-        this.destinationPath('webpack.config.js')
-      );
-      this.fs.copy(
-        this.templatePath('_webpack.common.config.js'),
-        this.destinationPath('webpack.common.config.js')
-      );
-      this.fs.copy(
-        this.templatePath('_server.js'),
-        this.destinationPath('server.js')
-      );
-      this.fs.copy(
-        this.templatePath('_index.html'),
-        this.destinationPath('dist/index.html')
-      );
-      this.fs.copy(
-        this.templatePath('_index.html'),
-        this.destinationPath('src/index_template.html')
-      );
-      this.fs.copy(
-        this.templatePath('_index.js'),
-        this.destinationPath('src/js/index.js')
-      );
-      this.fs.copy(
-        this.templatePath('_HelloComponent.js'),
-        this.destinationPath('src/js/components/HelloComponent.js')
-      );
-      this.fs.copy(
-        this.templatePath('_core.less'),
-        this.destinationPath('src/css/exports/core.less')
+        this.destinationPath('package.json'),
+        this.props
       );
     },
-
-    directories: function() {
+    directories() {
       var dirs = [
         './dist/',
         './src/js/components',
@@ -89,7 +61,7 @@ module.exports = yeoman.generators.Base.extend({
       this.log( logDirs );
     },
 
-    projectfiles: function () {
+    projectFiles: function () {
       // this.fs.copy(
       //   this.templatePath('editorconfig'),
       //   this.destinationPath('.editorconfig')
