@@ -1,0 +1,9 @@
+{
+  "env": {
+    "production": {
+      "plugins": ["transform-react-remove-prop-types", "remove-console"]
+    }
+  },
+  "presets" : [ "es2015", "react" ],
+  "plugins": [ "transform-object-assign" ]
+}

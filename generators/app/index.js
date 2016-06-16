@@ -1,49 +1,11 @@
 'use strict';
 const yeoman = require('yeoman-generator');
 const mkdirp = require('mkdirp');
-const banner = require('./utils/banner');
+const projectFiles = require('./projectFiles');
+const projectDirectories = require('./projectDirectories');
 const generatePrompts = require('./prompts/');
+const banner = require('./utils/banner');
 
-//  The directories for the app
-const projectDirectories = [
-  './public/',
-  './server/',
-  './src/',
-  './src/actions/',
-  './src/components/',
-  './src/css/',
-  './src/images/',
-  './src/reducers/'
-];
-
-const projectFiles = [
-  {
-    template: '_readme.md',
-    dest: 'readme.md',
-    method: 'template'
-  }, {
-    template: '_package.json',
-    dest: 'package.json',
-    method: 'template'
-  }, {
-    template: '_webpack-index-template.ejs',
-    dest: 'webpack-index-template.ejs',
-    method: 'copy'
-  }, {
-    template: '_webpack-config.js',
-    dest: 'webpack-config.js',
-    method: 'copy'
-  }
-  // , {
-  //   template: '',
-  //   dest: '',
-  //   method: ''
-  // }, {
-  //   template: '',
-  //   dest: '',
-  //   method: ''
-  // }
-];
 
 module.exports = yeoman.generators.Base.extend({
   prompting() {
@@ -73,22 +35,18 @@ module.exports = yeoman.generators.Base.extend({
       this.log(logDirs);
     },
     projectFiles() {
-      projectFiles.map(file => {
-        if (file.method === 'template') {
-          return this.fs.copyTpl(
-            this.templatePath(file.template),
-            this.destinationPath(file.dest),
-            this.props
-          )
-        }
-        if (file.method === 'copy') {
-          return this.fs.copy(
-            this.templatePath(file.template),
-            this.destinationPath(file.dest)
-          )
-        }
-        //  if you fail to specify 'template' or 'copy', an error is thrown
-        throw new Error('Learn to code, ya goof!');
+      projectFiles.template.map(file => {
+        return this.fs.copyTpl(
+          this.templatePath(file.template),
+          this.destinationPath(file.dest),
+          this.props
+        )
+      });
+      projectFiles.copy.map(file => {
+        return this.fs.copy(
+          this.templatePath(file.template),
+          this.destinationPath(file.dest)
+        )
       });
     }
   },

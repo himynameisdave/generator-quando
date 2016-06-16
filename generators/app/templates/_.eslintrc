@@ -1,0 +1,7 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "comma-dangle": ["error", "never"],
+    "react/prefer-es6-class": ["error", "never"]
+  }
+}
