@@ -16,6 +16,35 @@ const projectDirectories = [
   './src/reducers/'
 ];
 
+const projectFiles = [
+  {
+    template: '_readme.md',
+    dest: 'readme.md',
+    method: 'template'
+  }, {
+    template: '_package.json',
+    dest: 'package.json',
+    method: 'template'
+  }, {
+    template: '_webpack-index-template.ejs',
+    dest: 'webpack-index-template.ejs',
+    method: 'copy'
+  }, {
+    template: '_webpack-config.js',
+    dest: 'webpack-config.js',
+    method: 'copy'
+  }
+  // , {
+  //   template: '',
+  //   dest: '',
+  //   method: ''
+  // }, {
+  //   template: '',
+  //   dest: '',
+  //   method: ''
+  // }
+];
+
 module.exports = yeoman.generators.Base.extend({
   prompting() {
     const done = this.async();
@@ -33,50 +62,40 @@ module.exports = yeoman.generators.Base.extend({
     });
   },
   writing: {
-    app() {
-      this.fs.copyTpl(
-        this.templatePath('_readme.md'),
-        this.destinationPath('readme.md'),
-        this.props
-      );
-      this.fs.copyTpl(
-        this.templatePath('_package.json'),
-        this.destinationPath('package.json'),
-        this.props
-      );
-    },
     directories() {
-      var dirs = [
-        './dist/',
-        './src/js/components',
-        './src/images/'
-      ],
-      logDirs = "";
-
-      dirs.forEach( function(dir){
-        mkdirp.sync( dir );
-        logDirs += "   create "+dir+"\n";
-      });
-
-      this.log( logDirs );
+      const logDirs = projectDirectories.map(dir => {
+        //  create the directories
+        mkdirp.sync(dir);
+        //  return a line to be logged
+        return `   create ${dir}\n`;
+      }).join('');
+      //  Log the dirs
+      this.log(logDirs);
     },
-
-    projectFiles: function () {
-      // this.fs.copy(
-      //   this.templatePath('editorconfig'),
-      //   this.destinationPath('.editorconfig')
-      // );
-      // this.fs.copy(
-      //   this.templatePath('jshintrc'),
-      //   this.destinationPath('.jshintrc')
-      // );
+    projectFiles() {
+      projectFiles.map(file => {
+        if (file.method === 'template') {
+          return this.fs.copyTpl(
+            this.templatePath(file.template),
+            this.destinationPath(file.dest),
+            this.props
+          )
+        }
+        if (file.method === 'copy') {
+          return this.fs.copy(
+            this.templatePath(file.template),
+            this.destinationPath(file.dest)
+          )
+        }
+        //  if you fail to specify 'template' or 'copy', an error is thrown
+        throw new Error('Learn to code, ya goof!');
+      });
     }
   },
-
-  install: function () {
-    this.npmInstall('', function(err){
-      if(err) console.log(err)
-      console.log("EL QUANDO IS DONE FOR THE DAY!");
-    });
+  install() {
+    // this.npmInstall('', function(err){
+    //   if(err) console.log(err)
+    //   console.log("EL QUANDO IS DONE FOR THE DAY!");
+    // });
   }
 });

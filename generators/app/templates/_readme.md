@@ -4,4 +4,4 @@
 
 ---
 
-*This project was generated using [`generator-quando`](https://github.com/himynameisdave/generator-quando) by Dave Lunny*
+*This project was generated using [`generator-quando`](https://github.com/himynameisdave/generator-quando)*
