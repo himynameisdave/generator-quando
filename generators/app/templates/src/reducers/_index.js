@@ -13,3 +13,7 @@ const sample = (state = defaultState, action) => {
       return state;
   }
 };
+
+const rootReducer = combineReducers({ sample });
+
+export default rootReducer;

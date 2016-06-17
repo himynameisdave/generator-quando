@@ -16,11 +16,11 @@ const projectFiles = {
     '/server/server.js',
     '/src/index.js',
     '/src/App.js',
-    './src/actions/AsyncDispatcher.js',
-    './src/actions/index.js',
-    './src/actions/sample.js',
-    './src/reducers/defaultState.js',
-    './src/reducers/index.js'
+    '/src/actions/AsyncDispatcher.js',
+    '/src/actions/index.js',
+    '/src/actions/sample.js',
+    '/src/reducers/defaultState.js',
+    '/src/reducers/index.js'
   ].map(file => fileGenerator(file))
 };
 

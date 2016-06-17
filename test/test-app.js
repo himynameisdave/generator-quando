@@ -47,7 +47,6 @@ describe('quando:app', () => {
       './src/App.js'
     ]);
   });
-
   //  Assert creation of the src/actions
   it('creates src/actions files', () => {
     assert.file([
@@ -63,8 +62,13 @@ describe('quando:app', () => {
       './src/reducers/index.js'
     ]);
   });
-
-
-
-
+  //  Assert creation of app components
+  it('creates the src/components/ stuff', () => {
+    assert.file([
+      './src/components/',
+      './src/components/Modules/',
+      './src/components/Pages/',
+      './src/components/Units/'
+    ]);
+  });
 });

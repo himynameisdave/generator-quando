@@ -4,10 +4,13 @@ const projectDirectories = [
   './server/',
   './src/',
   './src/actions/',
+  './src/reducers/',
   './src/components/',
   './src/css/',
   './src/images/',
-  './src/reducers/'
+  './src/components/modules/',
+  './src/components/pages/',
+  './src/components/units/'
 ];
 
 module.exports = projectDirectories;
