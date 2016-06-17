@@ -1,15 +1,10 @@
 'use strict';
+const path = require('path');
+const assert = require('yeoman-generator').assert;
+const helpers = require('yeoman-generator').test;
 
-var path = require('path');
-var assert = require('yeoman-generator').assert;
-var helpers = require('yeoman-generator').test;
-
-
-
-describe('quando:app', function () {
-
+describe('quando:app', () => {
   //  Skips the install
-
   before(function (done) {
     helpers.run(path.join(__dirname, '../generators/app'))
       .withOptions({ skipInstall: true })
@@ -17,95 +12,39 @@ describe('quando:app', function () {
       .on('end', done);
   });
 
-  //  It creates files
-
-  it('creates a Procfile', function () {
+  //  Assert creation of the dotfiles
+  it('creates the dotfiles', () => {
     assert.file([
-      'Procfile'
+      '.babelrc',
+      '.eslintrc'
     ]);
   });
-
-  it('creates a readme', function () {
+  //  Assert creation of the readme & package
+  it('creates the readme & package', () => {
     assert.file([
-      'readme.md'
-    ]);
-  });
-
-  it('creates a package.json', function () {
-    assert.file([
+      'readme.md',
       'package.json'
     ]);
   });
-
-  it('creates a webpack.config.js & a common config', function () {
+  //  Assert creation of the webpack files
+  it('creates the webpack files', () => {
     assert.file([
+      'webpack-index-template.ejs',
       'webpack.config.js',
-      'webpack.common.config.js'
     ]);
   });
-
-  it('creates a server.js', function () {
+  //  Assert creation of the server files
+  it('creates the server files', () => {
     assert.file([
-      'server.js'
+      './server/router.js',
+      './server/server.js'
     ]);
   });
-
-  it('creates index.html files', function () {
+  //  Assert creation of the src app
+  it('creates the base src files for the app files', () => {
     assert.file([
-      'dist/index.html',
-      'src/index_template.html'
+      './src/index.js',
+      './src/App.js'
     ]);
   });
-
-  it('creates a src/js/index.js', function () {
-    assert.file([
-      'src/js/index.js'
-    ]);
-  });
-
-  it('creates a src/js/components/HelloComponent.js', function () {
-    assert.file([
-      'src/js/components/HelloComponent.js'
-    ]);
-  });
-
-  it('creates a src/css/exports/core.less', function () {
-    assert.file([
-      'src/css/exports/core.less'
-    ]);
-  });
-
-  //  It creates folders
-
-  it('creates a dist/', function () {
-    assert.file([
-      'dist/'
-    ]);
-  });
-
-  it('creates a src/', function () {
-    assert.file([
-      'src/'
-    ]);
-  });
-
-  it('creates a src/js/components/', function () {
-    assert.file([
-      'src/js/components/'
-    ]);
-  });
-
-  it('creates a src/images/', function () {
-    assert.file([
-      'src/images/'
-    ]);
-  });
-
-  it('creates a src/css/exports/', function () {
-    assert.file([
-      'src/css/exports/'
-    ]);
-  });
-
-
 });
