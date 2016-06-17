@@ -1,14 +1,5 @@
-
-//  Generates a template/dest pair for yeoman to consume
-const fileGenerator = (template, dest = template) => {
-  if (template.indexOf('/') === -1) return { template: `_${template}`, dest };
-  //  if it's path-like, we just gotta parse it a bit
-  const dirs = template.split('/');
-  const file = dirs[dirs.length - 1];
-  dirs.pop();
-  return { template: `${dirs.join('/')}/_${file}`, dest };
-};
-
+//  Util for generating template/dest pairs
+const fileGenerator = require('./utils/fileGenerator');
 const projectFiles = {
   //  Files we need to template out
   template: [
@@ -24,9 +15,13 @@ const projectFiles = {
     '/server/router.js',
     '/server/server.js',
     '/src/index.js',
-    '/src/App.js'
+    '/src/App.js',
+    './src/actions/AsyncDispatcher.js',
+    './src/actions/index.js',
+    './src/actions/sample.js',
+    './src/reducers/defaultState.js',
+    './src/reducers/index.js'
   ].map(file => fileGenerator(file))
 };
-
 
 module.exports = projectFiles;

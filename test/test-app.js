@@ -47,4 +47,24 @@ describe('quando:app', () => {
       './src/App.js'
     ]);
   });
+
+  //  Assert creation of the src/actions
+  it('creates src/actions files', () => {
+    assert.file([
+      './src/actions/AsyncDispatcher.js',
+      './src/actions/index.js',
+      './src/actions/sample.js'
+    ]);
+  });
+  //  Assert creation of the src/reducers
+  it('creates src/reducers files', () => {
+    assert.file([
+      './src/reducers/defaultState.js',
+      './src/reducers/index.js'
+    ]);
+  });
+
+
+
+
 });
