@@ -1,5 +1,5 @@
 //  Util for generating template/dest pairs
-const fileGenerator = require('./utils/fileGenerator');
+const fileGenerator = require('../../utils/fileGenerator');
 const projectFiles = {
   //  Files we need to template out
   template: [
@@ -20,7 +20,11 @@ const projectFiles = {
     '/src/actions/index.js',
     '/src/actions/sample.js',
     '/src/reducers/defaultState.js',
-    '/src/reducers/index.js'
+    '/src/reducers/index.js',
+    '/src/components/modules/Button.js',
+    '/src/components/modules/Heading.js',
+    '/src/components/modules/Link.js',
+    '/src/components/modules/Text.js'
   ].map(file => fileGenerator(file))
 };
 

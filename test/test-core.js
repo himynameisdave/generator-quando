@@ -5,8 +5,8 @@ const helpers = require('yeoman-generator').test;
 
 describe('quando:app', () => {
   //  Skips the install
-  before(function (done) {
-    helpers.run(path.join(__dirname, '../generators/app'))
+  before(done => {
+    helpers.run(path.join(__dirname, '../generators/core'))
       .withOptions({ skipInstall: true })
       // .withPrompts({ someOption: true })
       .on('end', done);
@@ -66,9 +66,19 @@ describe('quando:app', () => {
   it('creates the src/components/ stuff', () => {
     assert.file([
       './src/components/',
-      './src/components/Modules/',
-      './src/components/Pages/',
-      './src/components/Units/'
+      './src/components/modules/',
+      './src/components/pages/',
+      './src/components/units/'
+    ]);
+  });
+
+  //  Assert creation of app components
+  it('creates the components/modules/', () => {
+    assert.file([
+      './src/components/modules/Button.js',
+      './src/components/modules/Heading.js',
+      './src/components/modules/Link.js',
+      './src/components/modules/Text.js'
     ]);
   });
 });
