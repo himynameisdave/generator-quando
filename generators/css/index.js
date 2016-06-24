@@ -5,22 +5,15 @@ const baseCopyUrl = './src/css/';
 
 module.exports = yeoman.generators.Base.extend({
   writing() {
+    //  Flatten/removes nesting (which is only for simpler organization)
     const files = Object.keys(projectFiles).map(key => projectFiles[key]).reduce((a, b) => a.concat(b));
-
-    //TODO: finish this loopy stuff
+    //  Iterate over each of our files
     files.map(file => {
       console.log(file);
+      // this.fs.copy(
+      //   this.templatePath(file.template),
+      //   this.destinationPath(file.dest)
+      // );
     });
-
-    //  Loop this
-    this.fs.copy(
-      this.templatePath('exports/default.scss'),
-      this.destinationPath(`${baseCopyUrl}exports/default.scss`)
-    );
-
-    // this.fs.copy(
-    //   this.templatePath('configs/default/index.scss'),
-    //   this.destinationPath(`${baseCopyUrl}configs/default/index.scss`)
-    // );
   }
 });

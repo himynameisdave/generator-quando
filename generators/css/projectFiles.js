@@ -9,6 +9,9 @@ const projectFiles = {
     '/configs/default/partials/_layouts.scss',
     '/configs/default/partials/_typography.scss'
   ].map(file => fileGenerator(file)),
+  helpers: [
+    '/helpers/mixins/_visually-hide.scss'
+  ].map(file => fileGenerator(file)),
   // core: [
   //   '/core/_base.scss',
   //   '/core/_reset.scss'

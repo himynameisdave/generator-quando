@@ -6,7 +6,7 @@ const fileGenerator = (template, dest = template) => {
   const dirs = template.split('/');
   const file = dirs[dirs.length - 1];
   dirs.pop();
-  return { template: `${dirs.join('/')}/_${file}`, dest };
+  return { template: `${dirs.join('/')}/${_}${file}`, dest };
 };
 
 module.exports = fileGenerator;
