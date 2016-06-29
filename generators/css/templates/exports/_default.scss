@@ -2,6 +2,9 @@
 @import "../configs/default/index";
 // 2. <-functions->
 // 3. <-mixins->
+@import "../helpers/mixins/bg-cover";
+@import "../helpers/mixins/pre-flex-center-hack";
+@import "../helpers/mixins/visually-hide";
 // 4. <-core->
 // 5. <-vendors->
 // 6. <-layouts->

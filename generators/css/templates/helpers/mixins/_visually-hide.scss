@@ -1,8 +1,8 @@
-// visually-hide
+//  visually-hide
 //
-// description of the visually-hide mixin.
+//  Method of hiding content visually while allowing search engines/screen readers to understand it
 //
-// Styleguide helpers.mixins.visually-hide
+//  Styleguide helpers.mixins.visually-hide
 @mixin visually-hide() {
   border: 0 !important;
   clip: rect(0 0 0 0) !important;

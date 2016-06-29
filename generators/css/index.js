@@ -13,7 +13,7 @@ module.exports = yeoman.generators.Base.extend({
     files.map(file => {
       this.fs.copy(
         this.templatePath(file.template),
-        this.destinationPath(file.dest)
+        this.destinationPath(`./src/css/${file.dest}`)
       );
     });
   }

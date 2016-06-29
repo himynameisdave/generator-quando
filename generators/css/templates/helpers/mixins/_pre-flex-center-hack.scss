@@ -1,0 +1,11 @@
+//  pre-flex-center-hack
+//
+//  Before flexbox, this was a useful hack to center things vertically/horizontally
+//
+//  Styleguide helpers.mixins.pre-flex-center-hack
+@mixin pre-flex-center-hack() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

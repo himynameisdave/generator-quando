@@ -10,6 +10,8 @@ const projectFiles = {
     '/configs/default/partials/_typography.scss'
   ].map(file => fileGenerator(file)),
   helpers: [
+    '/helpers/mixins/_bg-cover.scss',
+    '/helpers/mixins/_pre-flex-center-hack.scss',
     '/helpers/mixins/_visually-hide.scss'
   ].map(file => fileGenerator(file)),
   // core: [
