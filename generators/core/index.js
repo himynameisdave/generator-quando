@@ -26,7 +26,7 @@ module.exports = yeoman.generators.Base.extend({
   },
   writing: {
     directories() {
-      console.log(chalk.blue('\nBuilding Directories:\n'));
+      this.log(chalk.blue('\nBuilding Directories:\n'));
       const logDirs = projectDirectories.map(dir => {
         //  create the directories
         mkdirp.sync(dir);
@@ -37,7 +37,7 @@ module.exports = yeoman.generators.Base.extend({
       this.log(logDirs);
     },
     projectFiles() {
-      console.log(chalk.blue('Building Project Files:\n'));
+      this.log(chalk.blue('Building Project Files:\n'));
       projectFiles.template.map(file => {
         return this.fs.copyTpl(
           this.templatePath(file.template),

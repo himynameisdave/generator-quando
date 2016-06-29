@@ -11,7 +11,7 @@ module.exports = yeoman.generators.Base.extend({
   install() {
     // this.npmInstall('', function(err){
       // if(err) console.log(err)
-      console.log("EL QUANDO IS DONE FOR THE DAY!");
+      this.log("EL QUANDO IS DONE FOR THE DAY!");
     // });
   }
 });
