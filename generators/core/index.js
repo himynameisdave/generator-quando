@@ -45,13 +45,7 @@ module.exports = yeoman.generators.Base.extend({
       });
       let updatedCopyFiles = projectFiles.copy;
       if (!this.props.apiServer) {
-        updatedCopyFiles = updatedCopyFiles.filter(file => file.template !== '/server/_router.js')
-        .map(file => {
-          if (file.template === '/server/server.js') {
-            return { template: '/server/server.simple.js', dest: file.dest };
-          }
-          return file;
-        });
+        updatedCopyFiles = updatedCopyFiles.filter(file => file.template !== '/server/_router.js');
       }
       updatedCopyFiles.map(file => {
         return this.fs.copy(

@@ -32,9 +32,10 @@ if (isDeveloping) {
     res.sendFile(path.join(__dirname, '../public/index.html'));
   });
 }
-
+<% if (apiServer) { %>
+//  Attaches api router to the server
 app.use('/api', require('./router'));
-
+<% }; %>
 app.listen(port, () => {
   console.info('👂👂👂~~> Listening on port ' + port + '!!!');
 });

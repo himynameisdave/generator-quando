@@ -4,7 +4,8 @@ const projectFiles = {
   //  Files we need to template out
   template: [
     'readme.md',
-    'package.json'
+    'package.json',
+    '/server/server.js'
   ].map(file => fileGenerator(file)),
   //  Files we just need to copy
   copy: [
@@ -14,7 +15,6 @@ const projectFiles = {
     '.eslintrc',
     '.gitignore',
     '/server/router.js',
-    '/server/server.js',
     '/src/index.js',
     '/src/App.js',
     '/src/actions/AsyncDispatcher.js',
