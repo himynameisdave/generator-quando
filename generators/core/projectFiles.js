@@ -12,6 +12,7 @@ const projectFiles = {
     'webpack.config.js',
     '.babelrc',
     '.eslintrc',
+    '.gitignore',
     '/server/router.js',
     '/server/server.js',
     '/src/index.js',

@@ -3,12 +3,13 @@ const path = require('path');
 const assert = require('yeoman-generator').assert;
 const helpers = require('yeoman-generator').test;
 
-describe('quando:app', () => {
+describe('quando:core', () => {
   //  Skips the install
   before(done => {
     helpers.run(path.join(__dirname, '../generators/core'))
-      .withOptions({ skipInstall: true })
-      // .withPrompts({ someOption: true })
+      // .withOptions({ skipInstall: true })
+      //  TODO: create a test that runs with no api server
+      .withPrompts({ apiServer: true })
       .on('end', done);
   });
 
@@ -16,7 +17,8 @@ describe('quando:app', () => {
   it('creates the dotfiles', () => {
     assert.file([
       '.babelrc',
-      '.eslintrc'
+      '.eslintrc',
+      '.gitignore'
     ]);
   });
   //  Assert creation of the readme & package

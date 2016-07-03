@@ -1,6 +1,6 @@
 {
   "name": "generator-quando",
-  "version": "1.0.0_beta-1",
+  "version": "1.0.0-beta",
   "description": "Dave Lunny's personal generator for Webpack+React+Heroku projects.",
   "license": "MIT",
   "main": "app/index.js",
