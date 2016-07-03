@@ -14,10 +14,10 @@ const projectFiles = {
     '/helpers/mixins/_pre-flex-center-hack.scss',
     '/helpers/mixins/_visually-hide.scss'
   ].map(file => fileGenerator(file)),
-  // core: [
-  //   '/core/_base.scss',
-  //   '/core/_reset.scss'
-  // ].map(file => fileGenerator(file)),
+  core: [
+    '/core/_base.scss',
+    '/core/_reset.scss'
+  ].map(file => fileGenerator(file)),
   exports: [
     '/exports/default.scss'
   ].map(file => fileGenerator(file))

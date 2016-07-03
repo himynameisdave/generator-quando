@@ -11,11 +11,37 @@ describe('quando:css', () => {
       // .withPrompts({ someOption: true })
       .on('end', done);
   });
-  //  Assert creation of the dotfiles
-  it('creates the exports file', () => {
-    return true;
-    // assert.file([
-    //   './src/css/exports/default.scss'
-    // ]);
+
+
+  it('creates the css exports file', () => {
+    assert.file([
+      './src/css/exports/default.scss'
+    ]);
+  });
+
+  it('creates the css config files', () => {
+    assert.file([
+      './src/css/configs/default/_index.scss',
+      './src/css/configs/default/partials/_colors.scss',
+      './src/css/configs/default/partials/_icons.scss',
+      './src/css/configs/default/partials/_images.scss',
+      './src/css/configs/default/partials/_layouts.scss',
+      './src/css/configs/default/partials/_typography.scss'
+    ]);
+  });
+
+  it('creates the css core files', () => {
+    assert.file([
+      './src/css/core/_reset.scss',
+      './src/css/core/_base.scss'
+    ]);
+  });
+
+  it('creates the css helper files', () => {
+    assert.file([
+      './src/css/helpers/mixins/_bg-cover.scss',
+      './src/css/helpers/mixins/_pre-flex-center-hack.scss',
+      './src/css/helpers/mixins/_visually-hide.scss'
+    ]);
   });
 });
