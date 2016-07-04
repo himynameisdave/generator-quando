@@ -1,0 +1,44 @@
+// heading.theme
+//
+// theme classes for the heading module.
+//
+// Markup: tests/fixtures/heading.hbs
+//
+// Styleguide modules.heading.theme
+.heading-t-xsmall {
+  font-size: 1rem;
+}
+
+.heading-t-small {
+  font-size: 1.25rem;
+}
+
+.heading-t-medium {
+  font-size: 1.5rem;
+}
+
+.heading-t-large {
+  font-size: 2rem;
+}
+
+.heading-t-xlarge {
+  font-size: 2.25rem;
+}
+
+.heading-t-left {
+  text-align: left;
+}
+
+.heading-t-right {
+  text-align: right;
+}
+
+.heading-t-section {
+  margin-bottom: 1rem;
+  &.heading-t-left {
+    padding-left: 8%;
+  }
+  &.heading-t-right {
+    padding-right: 8%;
+  }
+}

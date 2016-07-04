@@ -20,14 +20,20 @@ const projectFiles = {
   ].map(file => fileGenerator(file)),
   exports: [
     '/exports/default.scss'
+  ].map(file => fileGenerator(file)),
+  modules: [
+    '/modules/heading/_index.scss',
+    '/modules/heading/partials/_base.scss',
+    '/modules/heading/partials/_layout.scss',
+    '/modules/heading/partials/_modifier.scss',
+    '/modules/heading/partials/_state.scss',
+    '/modules/heading/partials/_theme.scss'
   ].map(file => fileGenerator(file))
+
+
   // ,
   // layouts: [
   //   '/layouts/file'
-  // ].map(file => fileGenerator(file))
-  // ,
-  // modules: [
-  //   '/nope/file'
   // ].map(file => fileGenerator(file))
 };
 

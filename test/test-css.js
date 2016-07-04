@@ -44,4 +44,15 @@ describe('quando:css', () => {
       './src/css/helpers/mixins/_visually-hide.scss'
     ]);
   });
+
+  it('creates the css modules/heading files', () => {
+    assert.file([
+      './src/css/modules/heading/_index.scss',
+      './src/css/modules/heading/partials/_base.scss',
+      './src/css/modules/heading/partials/_layout.scss',
+      './src/css/modules/heading/partials/_modifier.scss',
+      './src/css/modules/heading/partials/_state.scss',
+      './src/css/modules/heading/partials/_theme.scss'
+    ]);
+  });
 });
