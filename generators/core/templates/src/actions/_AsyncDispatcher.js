@@ -16,7 +16,7 @@ const AsyncDispatcher = (
     return fetch(endpoint)
       .then(res => res.json())
       .then(data => {
-        dispatch(actionSuccess(data.default));
+        dispatch(actionSuccess(data));
       })
       .catch(e => {
         dispatch(actionFailure(e));
