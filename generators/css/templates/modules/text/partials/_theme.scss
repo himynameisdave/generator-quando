@@ -1,0 +1,26 @@
+// text.theme
+//
+// theme classes for the text module.
+//
+// Markup: tests/fixtures/text.hbs
+//
+// Styleguide modules.text.theme
+.text-t-xsmall {
+  font-size: 0.8rem;
+}
+
+.text-t-small {
+  font-size: 0.875rem;
+}
+
+.text-t-medium {
+  font-size: 1rem;
+}
+
+.text-t-large {
+  font-size: 1.25rem;
+}
+
+.text-t-xlarge {
+  font-size: 1.5rem;
+}

@@ -77,4 +77,16 @@ describe('quando:css', () => {
       './src/css/modules/link/partials/_theme.scss'
     ]);
   });
+
+  it('creates the css modules/text files', () => {
+    assert.file([
+      './src/css/modules/text/_index.scss',
+      './src/css/modules/text/partials/_base.scss',
+      './src/css/modules/text/partials/_layout.scss',
+      './src/css/modules/text/partials/_modifier.scss',
+      './src/css/modules/text/partials/_state.scss',
+      './src/css/modules/text/partials/_theme.scss'
+    ]);
+  });
+
 });

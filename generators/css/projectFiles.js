@@ -39,10 +39,14 @@ const projectFiles = {
     '/modules/link/partials/_layout.scss',
     '/modules/link/partials/_modifier.scss',
     '/modules/link/partials/_state.scss',
-    '/modules/link/partials/_theme.scss'
+    '/modules/link/partials/_theme.scss',
+    '/modules/text/_index.scss',
+    '/modules/text/partials/_base.scss',
+    '/modules/text/partials/_layout.scss',
+    '/modules/text/partials/_modifier.scss',
+    '/modules/text/partials/_state.scss',
+    '/modules/text/partials/_theme.scss'
   ].map(file => fileGenerator(file))
-
-
   // ,
   // layouts: [
   //   '/layouts/file'
