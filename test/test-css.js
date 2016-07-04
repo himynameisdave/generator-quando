@@ -45,6 +45,17 @@ describe('quando:css', () => {
     ]);
   });
 
+  it('creates the css modules/button files', () => {
+    assert.file([
+      './src/css/modules/button/_index.scss',
+      './src/css/modules/button/partials/_base.scss',
+      './src/css/modules/button/partials/_layout.scss',
+      './src/css/modules/button/partials/_modifier.scss',
+      './src/css/modules/button/partials/_state.scss',
+      './src/css/modules/button/partials/_theme.scss'
+    ]);
+  });
+
   it('creates the css modules/heading files', () => {
     assert.file([
       './src/css/modules/heading/_index.scss',

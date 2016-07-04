@@ -27,7 +27,13 @@ const projectFiles = {
     '/modules/heading/partials/_layout.scss',
     '/modules/heading/partials/_modifier.scss',
     '/modules/heading/partials/_state.scss',
-    '/modules/heading/partials/_theme.scss'
+    '/modules/heading/partials/_theme.scss',
+    '/modules/button/_index.scss',
+    '/modules/button/partials/_base.scss',
+    '/modules/button/partials/_layout.scss',
+    '/modules/button/partials/_modifier.scss',
+    '/modules/button/partials/_state.scss',
+    '/modules/button/partials/_theme.scss'
   ].map(file => fileGenerator(file))
 
 

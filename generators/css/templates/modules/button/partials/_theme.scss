@@ -1,0 +1,55 @@
+// button.theme
+//
+// theme classes for the button module.
+//
+// Markup: tests/fixtures/button.hbs
+//
+// Styleguide modules.button.theme
+.button-t-amber {
+  border-color: $amber;
+  color: $amber;
+}
+
+.button-t-dark {
+  border-color: $black_2;
+  color: $black_2;
+}
+
+.button-t-ghost {
+  border-style: solid;
+  border-width: 0.1rem;
+}
+
+.button-t-text {
+  border-style: none;
+  border-width: none;
+}
+
+.button-t-filled {
+  &.button-t-amber {
+    background-color: $amber;
+    color: $black_2;
+    border: none;
+  }
+  &.button-t-dark {
+    background-color: $black_2;
+    color: $amber;
+    border: none;
+  }
+}
+
+.button-t-rounded {
+  border-radius: 0.2rem;
+}
+
+.button-t-slim {
+  padding: 0.15rem 0.65rem;
+}
+
+.button-t-medium {
+  padding: 0.35rem 1rem;
+}
+
+.button-t-large {
+  padding: 0.65rem 1.5rem;
+}
