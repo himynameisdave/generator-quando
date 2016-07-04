@@ -1,0 +1,24 @@
+// link.theme
+//
+// theme classes for the link module.
+//
+// Markup: tests/fixtures/link.hbs
+//
+// Styleguide modules.link.theme
+.link-t-default {
+  &:before {
+    background: $amber;
+    content: '';
+    display: block;
+    height: 0.075rem;
+    position: absolute;
+    bottom: -0.075rem;
+    transition: width 0.55s cubic-bezier(.79,.88,.22,.98);
+    width: 100%;
+  }
+  &:hover {
+    &:before {
+      width: 0;
+    }
+  }
+}
